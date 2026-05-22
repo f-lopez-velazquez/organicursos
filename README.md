@@ -2,20 +2,34 @@
   <img src="docs/assets/repo-hero.svg" alt="OrganiCursos banner" width="100%" />
 </p>
 
+<h1 align="center">OrganiCursos</h1>
+
 <p align="center">
-  <a href="https://github.com/f-lopez-velazquez/organicursos/releases">
-    <img alt="Release" src="https://img.shields.io/github/v/release/f-lopez-velazquez/organicursos?display_name=tag&style=for-the-badge">
-  </a>
-  <a href="https://github.com/f-lopez-velazquez/organicursos/actions/workflows/ci.yml">
-    <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/f-lopez-velazquez/organicursos/ci.yml?style=for-the-badge&label=CI">
-  </a>
-  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-0f172a?style=for-the-badge">
-  <img alt="Stack" src="https://img.shields.io/badge/stack-Tauri%20%2B%20React%20%2B%20Rust-111827?style=for-the-badge">
+  Biblioteca de escritorio <strong>local-first</strong> para organizar cursos, clases y materiales de estudio sin depender de la nube.
 </p>
 
-# OrganiCursos
+<p align="center">
+  <a href="https://zolvek-mx.web.app">Sitio</a> ·
+  <a href="https://github.com/f-lopez-velazquez/organicursos/releases">Descargas</a> ·
+  <a href="https://github.com/f-lopez-velazquez/organicursos/issues">Soporte</a> ·
+  <a href="https://paypal.me/FranciscoLopezVzqz">Donativos</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/f-lopez-velazquez/organicursos/releases">
+    <img alt="Release" src="https://img.shields.io/github/v/release/f-lopez-velazquez/organicursos?display_name=tag&style=flat-square">
+  </a>
+  <a href="https://github.com/f-lopez-velazquez/organicursos/actions/workflows/ci.yml">
+    <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/f-lopez-velazquez/organicursos/ci.yml?style=flat-square&label=CI">
+  </a>
+  <a href="LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/license-MIT-2f855a?style=flat-square">
+  </a>
+</p>
 
 OrganiCursos es una aplicación de escritorio `local-first` para organizar cursos, clases y materiales de estudio sin mover los archivos del usuario a la nube. Está enfocada en bibliotecas grandes de video, documentos, subtítulos y recursos de apoyo, con especial cuidado en continuidad de estudio, privacidad, rendimiento y operación offline.
+
+> Creado y mantenido por Francisco López Velázquez. El proyecto se publica como software libre bajo licencia MIT y puede apoyarse mediante donativos voluntarios.
 
 ## Resumen
 
@@ -33,6 +47,7 @@ La forma más simple para usuarios finales es descargar los artefactos desde la 
 
 - Releases: https://github.com/f-lopez-velazquez/organicursos/releases
 - Código fuente: https://github.com/f-lopez-velazquez/organicursos
+- Sitio del proyecto: https://zolvek-mx.web.app
 
 ### Compatibilidad actual
 
@@ -42,6 +57,13 @@ La forma más simple para usuarios finales es descargar los artefactos desde la 
 | Linux Mint / Ubuntu / Debian | Listo | `.deb`, `AppImage` | Instalación directa desde release |
 | Arch / CachyOS | Listo | `.pkg.tar.zst` | Instalación con `pacman -U` |
 | macOS Apple Silicon / Intel | Preparado | `.app`, `.dmg` | Requiere validación y firma en hardware macOS |
+
+### Enlaces del proyecto
+
+- Sitio principal: https://zolvek-mx.web.app
+- Donativos: https://paypal.me/FranciscoLopezVzqz
+- Repositorio: https://github.com/f-lopez-velazquez/organicursos
+- Issues: https://github.com/f-lopez-velazquez/organicursos/issues
 
 ### Linux
 
@@ -93,6 +115,7 @@ OrganiCursos ya queda bien encaminado para los principales sistemas de escritori
 - `Privacidad explícita`: cualquier ayuda remota se mantiene como opt-in.
 - `Reproducción seria`: el player conserva progreso, velocidad, volumen y estado de la clase.
 - `Distribución multiplataforma`: hay scripts para Windows, macOS y Linux, incluyendo paquete nativo para Arch/CachyOS y entregables listos para release.
+- `Código abierto`: el repositorio se publica bajo MIT y queda listo para revisarse, extenderse y redistribuirse con atribución.
 
 ## Desarrollo local
 
@@ -213,6 +236,21 @@ npm run build:cachyos:package
 ## Publicación del repositorio
 
 Este proyecto está organizado para que el código fuente se publique sin incluir artefactos generados, cachés, bases locales ni entregables pesados. El `.gitignore` excluye las rutas de trabajo y distribución que solo deben existir en el entorno de build.
+
+## Colaboración
+
+Las contribuciones se reciben vía pull requests y reportes de issues. Para mantener el repositorio claro y trazable, conviene revisar antes:
+
+- [Guía de contribución](CONTRIBUTING.md)
+- [Política de seguridad](SECURITY.md)
+- [Código de conducta](CODE_OF_CONDUCT.md)
+
+## Autor y apoyo
+
+- Autor: Francisco López Velázquez
+- Sitio: https://zolvek-mx.web.app
+- Contacto: f.lopezvelazquez@ugto.mx
+- Donativos: https://paypal.me/FranciscoLopezVzqz
 
 ## Proceso de release
 

@@ -1,12 +1,36 @@
 {
-  "name": "atlas-courses",
-  "private": true,
+  "name": "organicursos",
+  "private": false,
   "version": "0.1.0",
   "type": "module",
-  "author": "OrganiCursos contributors <support@organicursos.app>",
-  "license": "LicenseRef-Atlas-Courses-Commercial",
-  "homepage": "https://organicursos.app",
+  "author": "Francisco López Velázquez <f.lopezvelazquez@ugto.mx>",
+  "license": "MIT",
+  "homepage": "https://zolvek-mx.web.app",
   "description": "OrganiCursos - biblioteca local para cursos y recursos offline",
+  "keywords": [
+    "desktop-app",
+    "education",
+    "local-first",
+    "offline",
+    "react",
+    "rust",
+    "tauri",
+    "video-library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f-lopez-velazquez/organicursos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/f-lopez-velazquez/organicursos/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://paypal.me/FranciscoLopezVzqz"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "node ./node_modules/vite/bin/vite.js",
     "build": "node ./node_modules/typescript/bin/tsc --noEmit && node ./node_modules/vite/bin/vite.js build",

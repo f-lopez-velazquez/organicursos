@@ -46,10 +46,10 @@
     "targets": "all",
     "createUpdaterArtifacts": false,
     "category": "Education",
-    "publisher": "OrganiCursos contributors",
+    "publisher": "Francisco López Velázquez",
     "shortDescription": "Biblioteca local para cursos y recursos offline.",
     "longDescription": "OrganiCursos organiza cursos, videos, PDFs y materiales de aprendizaje en local, con progreso fiable, búsqueda y ayudas opcionales.",
-    "copyright": "Copyright (c) OrganiCursos contributors",
+    "copyright": "Copyright (c) Francisco López Velázquez",
     "externalBin": [
       "bin/organicursos-ffmpeg",
       "bin/organicursos-ffprobe"

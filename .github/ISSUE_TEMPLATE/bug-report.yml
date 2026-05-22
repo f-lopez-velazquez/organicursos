@@ -1,0 +1,53 @@
+name: Reporte de bug
+description: Reporta un fallo reproducible en la aplicación o en el proceso de build.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Resumen
+      description: Explica el problema en una o dos frases.
+      placeholder: Al cerrar una clase en Linux el progreso no se guarda.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: Describe los pasos exactos.
+      placeholder: |
+        1. Abrir una clase
+        2. Avanzar al minuto 12
+        3. Cerrar la app
+        4. Volver a abrirla
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Resultado observado
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión de OrganiCursos
+      placeholder: v0.1.0
+  - type: input
+    id: os
+    attributes:
+      label: Sistema operativo
+      placeholder: CachyOS, Linux Mint 22, Windows 11, macOS 14
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs o capturas
+      description: Pega aquí logs relevantes o rutas a capturas si ayudan.

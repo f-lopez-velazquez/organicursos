@@ -2,7 +2,10 @@
 name = "atlas-courses"
 version = "0.1.0"
 description = "OrganiCursos desktop app"
-authors = ["OrganiCursos contributors <support@organicursos.app>"]
+authors = ["Francisco López Velázquez <f.lopezvelazquez@ugto.mx>"]
+license = "MIT"
+homepage = "https://zolvek-mx.web.app"
+repository = "https://github.com/f-lopez-velazquez/organicursos"
 edition = "2021"
 
 [lib]

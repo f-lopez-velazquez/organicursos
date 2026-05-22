@@ -1,79 +1,46 @@
-# Licensing for OrganiCursos
+# Licensing
 
-## Objetivo
+## Licencia del proyecto
 
-OrganiCursos soporta activacion offline con tokens firmados. El binario solo necesita la clave publica; la emision del token se hace fuera de la app con una clave privada controlada por ventas u operaciones.
+OrganiCursos se publica bajo licencia `MIT`.
 
-Contacto operativo del licenciamiento:
+Eso significa que el código fuente puede:
 
-- sales@organicursos.app
-- https://organicursos.app/licensing
+- usarse en proyectos personales o profesionales
+- estudiarse y modificarse
+- redistribuirse
+- incorporarse a otros trabajos, siempre conservando el aviso de licencia y atribución
 
-## 1. Generar par de claves Ed25519
+La licencia completa está en [LICENSE](../LICENSE).
 
-PowerShell:
+## Autoría y referencia pública
 
-```powershell
-openssl genpkey -algorithm ED25519 -out atlas-license-private.pem
-openssl pkey -in atlas-license-private.pem -pubout -out atlas-license-public.pem
-```
+- Autor: Francisco López Velázquez
+- Sitio: https://zolvek-mx.web.app
+- Contacto: f.lopezvelazquez@ugto.mx
 
-Tambien puedes generar el par con Node.js o con tu infraestructura interna de firma.
+## Dependencias y binarios auxiliares
 
-## 2. Compilar OrganiCursos con la clave publica
+El proyecto usa dependencias de terceros y, para ciertos builds de escritorio, sidecars y bibliotecas nativas como `ffmpeg`, `ffprobe` y `sqlite-vec`.
 
-PowerShell:
+Antes de redistribuir builds finales, conviene revisar:
 
-```powershell
-$env:ATLAS_LICENSE_PUBLIC_KEY_PEM = Get-Content .\atlas-license-public.pem -Raw
-npm run build:windows:release
-```
+1. la licencia del proyecto principal
+2. las licencias de dependencias npm y crates de Rust
+3. las condiciones de redistribución de sidecars y librerías nativas
 
-La app incrusta la clave publica en el build. Sin esa variable, la interfaz de licencia sigue funcionando pero no podra validar tokens firmados.
+## Donaciones y sostenibilidad
 
-## 3. Emitir un token de licencia
+El proyecto puede mantenerse y evolucionar de forma abierta, pero acepta apoyo voluntario:
 
-Ejemplo:
+- Donativos: https://paypal.me/FranciscoLopezVzqz
+- Sitio del proyecto y autor: https://zolvek-mx.web.app
 
-```powershell
-  node .\scripts\generate-license-token.mjs `
-  --private-key .\atlas-license-private.pem `
-  --licensed-to "Equipo Finance Ops" `
-  --email "cliente@organicursos.app" `
-  --tier professional `
-  --company "Finance Ops LLC" `
-  --days 365
-```
+## Recomendación para releases públicas
 
-El comando devuelve un token con formato:
+Cuando se publiquen instaladores o bundles:
 
-```text
-ATLAS1.<payload-base64url>.<signature-base64url>
-```
-
-## 4. Activar en la app
-
-- Abrir `Licencia`
-- Pegar token
-- Confirmar `Activar licencia`
-
-## Campos del token
-
-- `iss`: debe ser `OrganiCursos`
-- `aud`: debe ser `atlas-courses-desktop`
-- `licenseId`
-- `tier`: `professional`, `team` o `enterprise`
-- `licensedTo`
-- `email`
-- `company`
-- `issuedAt`
-- `expiresAt`
-- `notBefore`
-- `features`
-
-## Notas operativas
-
-- La activacion se guarda en `app_settings` de la base local.
-- `clear activation` elimina el token y la prueba local del equipo.
-- La prueba local profesional dura 14 dias por defecto y tambien se registra en la base local.
-- Para produccion real, la clave privada nunca debe vivir en este repositorio ni en maquinas de usuario final.
+- incluir la licencia MIT
+- conservar la atribución del autor
+- documentar claramente la plataforma de destino
+- dejar visibles los canales de soporte y donación

@@ -1,16 +1,16 @@
-# OrganiCursos EULA
+# OrganiCursos Notice
 
-Este archivo es una base operativa para distribucion comercial y debe ser revisado por asesoria legal antes de publicar.
+OrganiCursos se distribuye como software libre bajo licencia MIT.
 
-Contacto operativo del producto:
+## Autor
 
-- support@organicursos.app
-- https://organicursos.app
+- Francisco López Velázquez
+- https://zolvek-mx.web.app
+- f.lopezvelazquez@ugto.mx
 
 ## Resumen
 
-- La licencia otorga uso del binario compilado, no cesion del codigo fuente.
-- El usuario conserva la propiedad de su contenido local.
-- OrganiCursos procesa el contenido principal del usuario en local salvo funciones remotas opt-in.
-- No se garantiza compatibilidad con formatos corruptos, sidecars ausentes o librerias nativas de terceros no presentes.
-- El soporte y la politica comercial deben definirse antes del lanzamiento publico.
+- Puedes usar, estudiar, modificar y redistribuir el código respetando la licencia MIT incluida en este repositorio.
+- El contenido personal de cada usuario sigue siendo suyo.
+- La aplicación está diseñada para trabajar en local y conservar la continuidad de estudio sin depender de subir el contenido principal a la nube.
+- Si distribuyes una versión derivada, conserva la atribución correspondiente y revisa también las licencias de dependencias de terceros.

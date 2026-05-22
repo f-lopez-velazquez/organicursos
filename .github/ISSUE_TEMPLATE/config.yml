@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Sitio del proyecto
+    url: https://zolvek-mx.web.app
+    about: Información general sobre el proyecto y forma de contacto.
+  - name: Donativos
+    url: https://paypal.me/FranciscoLopezVzqz
+    about: Apoya el mantenimiento del proyecto.

@@ -21,6 +21,12 @@ function Resolve-SourceRoot {
     return $Hint
   }
 
+  $ffmpegCommand = Get-Command ffmpeg -ErrorAction SilentlyContinue
+  $ffprobeCommand = Get-Command ffprobe -ErrorAction SilentlyContinue
+  if ($ffmpegCommand -and $ffprobeCommand) {
+    return Split-Path -Path $ffmpegCommand.Source -Parent
+  }
+
   $packageRoot = Join-Path $env:LOCALAPPDATA "Microsoft\\WinGet\\Packages"
   if (-not (Test-Path $packageRoot)) {
     throw "No se encontro el directorio de paquetes de winget: $packageRoot"

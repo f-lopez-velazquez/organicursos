@@ -9,20 +9,21 @@ OrganiCursos esta orientado a usuarios profesionales que almacenan bibliotecas d
 - organizacion automatica prudente
 - un reproductor serio con persistencia exacta
 
-## Pricing Inputs
+## Sostenibilidad
 
-- edicion individual local-first
-- edicion profesional con soporte prioritario
-- licencias por equipo con despliegue administrado
+- donaciones voluntarias
+- soporte directo por parte del autor
+- releases públicos por plataforma
+- documentación clara para instalación y uso
 
-## Sales Assets Needed
+## Assets Needed
 
 - web de marketing
 - capturas finales por plataforma
 - comparativa frente a soluciones cloud
 - pagina de privacidad resumida
 - FAQ de importacion, respaldo y sidecars
-- playbook de licencias offline firmado
+- enlaces visibles al sitio oficial y canal de donativos
 
 ## Support Readiness
 
@@ -42,5 +43,6 @@ OrganiCursos esta orientado a usuarios profesionales que almacenan bibliotecas d
 
 ## Contacto operativo
 
-- support@organicursos.app
-- https://organicursos.app/support
+- Francisco López Velázquez
+- f.lopezvelazquez@ugto.mx
+- https://zolvek-mx.web.app

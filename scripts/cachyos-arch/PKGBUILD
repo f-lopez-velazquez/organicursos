@@ -1,12 +1,12 @@
-# Maintainer: OrganiCursos contributors <support@organicursos.app>
+# Maintainer: Francisco Lopez Velazquez <f.lopezvelazquez@ugto.mx>
 
 pkgname=organicursos
 pkgver="${ORGANI_VERSION:-0.1.0}"
 pkgrel="${ORGANI_PKGREL:-1}"
 pkgdesc="OrganiCursos - biblioteca local para cursos y recursos offline"
 arch=('x86_64' 'aarch64')
-url="https://organicursos.app"
-license=('custom:OrganiCursos')
+url="https://zolvek-mx.web.app"
+license=('MIT')
 depends=('webkit2gtk-4.1' 'openssl' 'libayatana-appindicator' 'xdotool' 'librsvg' 'ffmpeg')
 provides=('organicursos')
 conflicts=('organicursos-bin')

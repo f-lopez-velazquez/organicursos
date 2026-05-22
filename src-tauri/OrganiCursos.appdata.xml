@@ -4,12 +4,12 @@
   <name>OrganiCursos</name>
   <summary>Biblioteca local para cursos, clases y materiales de estudio</summary>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>LicenseRef-Atlas-Courses-Commercial</project_license>
+  <project_license>MIT</project_license>
   <developer id="app.organicursos">
-    <name>OrganiCursos contributors</name>
+    <name>Francisco López Velázquez</name>
   </developer>
-  <url type="homepage">https://github.com/organicursos/organicursos</url>
-  <url type="help">https://github.com/organicursos/organicursos/issues</url>
+  <url type="homepage">https://zolvek-mx.web.app</url>
+  <url type="help">https://github.com/f-lopez-velazquez/organicursos/issues</url>
   <description>
     <p>
       OrganiCursos organiza bibliotecas locales de aprendizaje, conserva el avance exacto de cada clase y reúne
