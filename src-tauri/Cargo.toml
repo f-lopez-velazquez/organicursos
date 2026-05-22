@@ -41,7 +41,7 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
 uuid = { version = "1.15", features = ["serde", "v4"] }
 walkdir = "2.5"
-zip = "2.2"
+zip = "8.6"
 
 [features]
 default = ["custom-protocol"]
