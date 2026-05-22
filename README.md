@@ -1,10 +1,47 @@
+<p align="center">
+  <img src="docs/assets/repo-hero.svg" alt="OrganiCursos banner" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/f-lopez-velazquez/organicursos/releases">
+    <img alt="Release" src="https://img.shields.io/github/v/release/f-lopez-velazquez/organicursos?display_name=tag&style=for-the-badge">
+  </a>
+  <a href="https://github.com/f-lopez-velazquez/organicursos/actions/workflows/ci.yml">
+    <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/f-lopez-velazquez/organicursos/ci.yml?style=for-the-badge&label=CI">
+  </a>
+  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-0f172a?style=for-the-badge">
+  <img alt="Stack" src="https://img.shields.io/badge/stack-Tauri%20%2B%20React%20%2B%20Rust-111827?style=for-the-badge">
+</p>
+
 # OrganiCursos
 
-OrganiCursos es una aplicación de escritorio local-first para organizar cursos, clases y materiales de estudio sin mover los archivos del usuario a la nube. Está pensada para bibliotecas grandes de video, documentos, subtítulos y recursos de apoyo, con foco en continuidad de estudio, privacidad y operación offline.
+OrganiCursos es una aplicación de escritorio `local-first` para organizar cursos, clases y materiales de estudio sin mover los archivos del usuario a la nube. Está enfocada en bibliotecas grandes de video, documentos, subtítulos y recursos de apoyo, con especial cuidado en continuidad de estudio, privacidad, rendimiento y operación offline.
+
+## Resumen
+
+- organiza carpetas de cursos sin alterar la estructura original
+- conserva el punto exacto de cada clase, junto con velocidad y volumen
+- reúne materiales, subtítulos, notas y marcadores en una sola vista
+- distribuye builds para Linux y deja preparado el flujo de release para Windows y macOS
+- separa código fuente y artefactos para mantener el repositorio limpio y profesional
 
 ## Instalación
 
 La forma más simple para usuarios finales es descargar los artefactos desde la sección de Releases del repositorio.
+
+### Descargas rápidas
+
+- Releases: https://github.com/f-lopez-velazquez/organicursos/releases
+- Código fuente: https://github.com/f-lopez-velazquez/organicursos
+
+### Compatibilidad actual
+
+| Plataforma | Estado | Formato principal | Notas |
+|---|---|---|---|
+| Windows 10/11 x64 | Preparado | `setup.exe`, `msi` | Flujo de build incluido en scripts y workflow |
+| Linux Mint / Ubuntu / Debian | Listo | `.deb`, `AppImage` | Instalación directa desde release |
+| Arch / CachyOS | Listo | `.pkg.tar.zst` | Instalación con `pacman -U` |
+| macOS Apple Silicon / Intel | Preparado | `.app`, `.dmg` | Requiere validación y firma en hardware macOS |
 
 ### Linux
 
@@ -27,6 +64,10 @@ sudo pacman -U ./organicursos-0.1.0-1-x86_64.pkg.tar.zst
 
 - el flujo de build está preparado, pero debe validarse y firmarse en hardware macOS antes de distribución pública final
 
+### Sobre “cualquier dispositivo”
+
+OrganiCursos ya queda bien encaminado para los principales sistemas de escritorio. Si más adelante quieres cubrir también móviles o tablets, eso ya sería otro frente de producto y de interfaz, no solo de empaquetado.
+
 ## Qué resuelve
 
 - Organiza carpetas de cursos sin alterar la estructura original.
@@ -40,6 +81,7 @@ sudo pacman -U ./organicursos-0.1.0-1-x86_64.pkg.tar.zst
 
 - `Tauri v2`
 - `React 18 + TypeScript + Vite`
+- `Rust`
 - `Zustand`
 - `SQLite + FTS5`
 - `sqlite-vec`
@@ -50,7 +92,7 @@ sudo pacman -U ./organicursos-0.1.0-1-x86_64.pkg.tar.zst
 - `Local-first`: el contenido principal se procesa y persiste en el equipo del usuario.
 - `Privacidad explícita`: cualquier ayuda remota se mantiene como opt-in.
 - `Reproducción seria`: el player conserva progreso, velocidad, volumen y estado de la clase.
-- `Distribución multiplataforma`: hay scripts para Windows, macOS y Linux, incluyendo paquete nativo para Arch/CachyOS.
+- `Distribución multiplataforma`: hay scripts para Windows, macOS y Linux, incluyendo paquete nativo para Arch/CachyOS y entregables listos para release.
 
 ## Desarrollo local
 
@@ -84,7 +126,16 @@ npm run deliver:linux:cachyos
 npm run prepare:linux:share
 ```
 
-## Linux y CachyOS
+## Flujo de releases
+
+- `CI` valida frontend y chequeos de escritorio
+- `Release Bundles` compila artefactos por plataforma
+- las releases públicas se pueden preparar desde tags `v*`
+- los instaladores viven en Releases, no dentro del historial del repo
+
+## Distribución por plataforma
+
+### Linux y CachyOS
 
 Para generar artefactos Linux:
 
@@ -100,6 +151,26 @@ npm run deliver:linux:cachyos
 ```
 
 La salida de distribución queda en `ENTREGA/` durante los procesos locales de release, pero esa carpeta se ignora para publicación del repositorio.
+
+### Windows
+
+```bash
+npm run build:windows:release
+```
+
+Salida esperada:
+- instalador `NSIS`
+- paquete `MSI`
+
+### macOS
+
+```bash
+npm run build:macos:release -- --arch arm64
+```
+
+Salida esperada:
+- bundle `.app`
+- imagen `.dmg`
 
 ## Estructura del proyecto
 
@@ -151,7 +222,8 @@ Los instaladores y paquetes se preparan con automatización por CLI sobre `npm`,
 
 - base funcional de escritorio lista para bibliotecas locales
 - empaquetado Linux validado con AppImage, `.deb` y paquete nativo para Arch/CachyOS
-- flujo de publicación preparado para mantener código, documentación y entregables de forma separada
+- workflow de publicación preparado para mantener código, documentación y entregables de forma separada
+- estructura del repo lista para seguir creciendo como producto público
 
 ## Documentación complementaria
 

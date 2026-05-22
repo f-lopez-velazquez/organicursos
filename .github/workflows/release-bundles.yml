@@ -2,6 +2,17 @@ name: Release Bundles
 
 on:
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Tag opcional para publicar release, por ejemplo v0.1.1"
+        required: false
+        type: string
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -47,3 +58,55 @@ jobs:
           path: |
             src-tauri/target/release/bundle/**
           if-no-files-found: ignore
+
+  publish:
+    if: startsWith(github.ref, 'refs/tags/v') || github.event.inputs.release_tag != ''
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Download bundle artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: bundle-*
+          path: release-artifacts
+          merge-multiple: false
+
+      - name: Resolve release tag
+        id: meta
+        run: |
+          if [ -n "${{ github.event.inputs.release_tag }}" ]; then
+            TAG="${{ github.event.inputs.release_tag }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+          fi
+          VERSION="${TAG#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Build release notes
+        run: |
+          cat > release-notes.md <<EOF
+          OrganiCursos ${VERSION}
+
+          Artefactos generados automáticamente para distribución multiplataforma.
+
+          Incluye, según la plataforma disponible:
+          - instaladores de Windows
+          - bundles y DMG para macOS
+          - AppImage y paquete .deb para Linux
+
+          Recomendaciones:
+          - usa Releases para descargar binarios
+          - usa el repositorio para revisar código, documentación y scripts de build
+          EOF
+        env:
+          VERSION: ${{ steps.meta.outputs.version }}
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          name: OrganiCursos ${{ steps.meta.outputs.version }}
+          body_path: release-notes.md
+          files: |
+            release-artifacts/**/*

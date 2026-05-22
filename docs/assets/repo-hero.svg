@@ -1,0 +1,66 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="40" x2="1100" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="0.48" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+    <radialGradient id="glowLeft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 180) rotate(33) scale(340 250)">
+      <stop stop-color="#5BD6BE" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#5BD6BE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(980 470) rotate(-18) scale(360 260)">
+      <stop stop-color="#4F9CFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#4F9CFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="870" y1="134" x2="1088" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#182234"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="836" y1="164" x2="1045" y2="355" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5BD6BE"/>
+      <stop offset="0.58" stop-color="#4F9CFF"/>
+      <stop offset="1" stop-color="#D7B571"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="640" rx="32" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="32" fill="url(#glowLeft)"/>
+  <rect width="1280" height="640" rx="32" fill="url(#glowRight)"/>
+
+  <rect x="76" y="78" width="1128" height="484" rx="28" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)"/>
+
+  <g opacity="0.88">
+    <rect x="112" y="126" width="92" height="92" rx="28" fill="rgba(91,214,190,0.12)" stroke="rgba(255,255,255,0.08)"/>
+    <path d="M158 154C169.046 154 178 162.954 178 174V191.3C178 194.448 175.448 197 172.3 197H143.7C140.552 197 138 194.448 138 191.3V174C138 162.954 146.954 154 158 154Z" stroke="#DFFCF6" stroke-width="3.2"/>
+    <path d="M150 180.5L156 186.5L168.5 173.5" stroke="#DFFCF6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="110" y="288" fill="#E5E7EB" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="68" font-weight="700">
+    OrganiCursos
+  </text>
+  <text x="110" y="338" fill="#5BD6BE" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="0.18em">
+    LOCAL-FIRST DESKTOP APP
+  </text>
+  <text x="110" y="408" fill="#CBD5E1" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="400">
+    Organiza cursos, materiales y progreso sin mover tus archivos a la nube.
+  </text>
+  <text x="110" y="452" fill="#94A3B8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="24" font-weight="400">
+    Reproduce, retoma y respalda tu biblioteca en Windows, Linux y macOS.
+  </text>
+
+  <g>
+    <rect x="824" y="132" width="344" height="360" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="850" y="162" width="290" height="164" rx="22" fill="rgba(7,13,22,0.84)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="850" y="162" width="290" height="164" rx="22" fill="url(#accent)" fill-opacity="0.14"/>
+    <rect x="870" y="184" width="96" height="10" rx="5" fill="#E5E7EB"/>
+    <rect x="870" y="204" width="186" height="8" rx="4" fill="#94A3B8"/>
+    <rect x="870" y="230" width="250" height="64" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="886" y="248" width="82" height="10" rx="5" fill="#5BD6BE"/>
+    <rect x="886" y="268" width="168" height="8" rx="4" fill="#CBD5E1"/>
+    <rect x="850" y="350" width="290" height="116" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="872" y="378" width="146" height="10" rx="5" fill="#E5E7EB"/>
+    <rect x="872" y="401" width="224" height="8" rx="4" fill="#94A3B8"/>
+    <rect x="872" y="431" width="196" height="12" rx="6" fill="url(#accent)"/>
+  </g>
+</svg>
