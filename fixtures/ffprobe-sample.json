@@ -1,0 +1,22 @@
+{
+  "streams": [
+    {
+      "codec_type": "video",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "codec_type": "audio",
+      "codec_name": "aac"
+    },
+    {
+      "codec_type": "subtitle",
+      "codec_name": "webvtt"
+    }
+  ],
+  "format": {
+    "duration": "1245.35",
+    "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+  }
+}

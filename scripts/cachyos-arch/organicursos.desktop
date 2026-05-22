@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=OrganiCursos
+Comment=Organizador local offline de cursos y materiales de aprendizaje
+Exec=organicursos
+Icon=organicursos
+Type=Application
+Terminal=false
+Categories=Education;Utility;

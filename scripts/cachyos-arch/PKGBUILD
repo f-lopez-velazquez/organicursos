@@ -1,0 +1,31 @@
+# Maintainer: OrganiCursos contributors <support@organicursos.app>
+
+pkgname=organicursos
+pkgver="${ORGANI_VERSION:-0.1.0}"
+pkgrel="${ORGANI_PKGREL:-1}"
+pkgdesc="OrganiCursos - biblioteca local para cursos y recursos offline"
+arch=('x86_64' 'aarch64')
+url="https://organicursos.app"
+license=('custom:OrganiCursos')
+depends=('webkit2gtk-4.1' 'openssl' 'libayatana-appindicator' 'xdotool' 'librsvg' 'ffmpeg')
+provides=('organicursos')
+conflicts=('organicursos-bin')
+options=('!debug')
+source=('payload.tar.gz' 'LICENSE' 'EULA.md')
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+package() {
+  cd "$srcdir"
+
+  install -dm755 "$pkgdir"
+  cp -a usr "$pkgdir/"
+
+  # The Linux bundle may carry a Windows sqlite-vec DLL; it is not needed here.
+  rm -f "$pkgdir/usr/lib/OrganiCursos/resources/sqlite-vec/vec0.dll"
+
+  install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 EULA.md "$pkgdir/usr/share/licenses/$pkgname/EULA.md"
+
+  ln -sf atlas-courses "$pkgdir/usr/bin/organicursos"
+}

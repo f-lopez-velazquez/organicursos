@@ -1,0 +1,13 @@
+pub mod ai;
+pub mod app;
+pub mod bookmarks;
+pub mod commercial;
+pub mod covers;
+pub mod embeddings;
+pub mod library;
+pub mod maintenance;
+pub mod notes;
+pub mod player;
+pub mod search;
+pub mod settings;
+pub mod system;

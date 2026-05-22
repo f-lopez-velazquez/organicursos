@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Terminal=true
+Name=Instalar OrganiCursos
+Comment=Instalar OrganiCursos en CachyOS o Arch Linux
+Exec=sh -c 'cd "$(dirname "$1")" && exec ./instalar-cachyos.sh' dummy %k
+Icon=system-software-install
+Categories=Utility;

@@ -1,0 +1,49 @@
+name: Release Bundles
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Run smoke tests
+        run: npm run test:smoke
+      - name: Run frontend tests
+        run: npm test
+      - name: Cargo check
+        working-directory: src-tauri
+        run: cargo check
+      - name: Build Windows bundle
+        if: runner.os == 'Windows'
+        run: powershell -ExecutionPolicy Bypass -File ./scripts/build-windows-release.ps1 -SkipTests -CargoTargetDir "$PWD\\src-tauri\\target"
+      - name: Build macOS bundle
+        if: runner.os == 'macOS'
+        run: bash ./scripts/build-macos-release.sh --skip-tests --cargo-target-dir "$PWD/src-tauri/target"
+      - name: Build Linux bundle
+        if: runner.os == 'Linux'
+        run: bash ./scripts/build-linux-release.sh --skip-tests --cargo-target-dir "$PWD/src-tauri/target"
+      - name: Upload bundle artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-${{ runner.os }}
+          path: |
+            src-tauri/target/release/bundle/**
+          if-no-files-found: ignore

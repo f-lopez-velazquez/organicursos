@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "OrganiCursos",
+  "version": "0.1.0",
+  "identifier": "app.web.zolvek.organicursos",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": {
+          "allow": [
+            "$HOME/**",
+            "$DOCUMENT/**",
+            "$CACHE/**",
+            "$APPCACHE/**",
+            "$APPDATA/**"
+          ],
+          "requireLiteralLeadingDot": false
+        }
+      }
+    },
+    "windows": [
+      {
+        "label": "main",
+        "title": "OrganiCursos",
+        "width": 1440,
+        "height": 920,
+        "minWidth": 1180,
+        "minHeight": 760,
+        "center": true,
+        "maximized": true,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": false,
+    "category": "Education",
+    "publisher": "OrganiCursos contributors",
+    "shortDescription": "Biblioteca local para cursos y recursos offline.",
+    "longDescription": "OrganiCursos organiza cursos, videos, PDFs y materiales de aprendizaje en local, con progreso fiable, búsqueda y ayudas opcionales.",
+    "copyright": "Copyright (c) OrganiCursos contributors",
+    "externalBin": [
+      "bin/organicursos-ffmpeg",
+      "bin/organicursos-ffprobe"
+    ],
+    "resources": [
+      "resources/sqlite-vec/*"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

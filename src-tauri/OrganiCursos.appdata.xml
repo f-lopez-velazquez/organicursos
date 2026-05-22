@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.organicursos.desktop</id>
+  <name>OrganiCursos</name>
+  <summary>Biblioteca local para cursos, clases y materiales de estudio</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-Atlas-Courses-Commercial</project_license>
+  <developer id="app.organicursos">
+    <name>OrganiCursos contributors</name>
+  </developer>
+  <url type="homepage">https://github.com/organicursos/organicursos</url>
+  <url type="help">https://github.com/organicursos/organicursos/issues</url>
+  <description>
+    <p>
+      OrganiCursos organiza bibliotecas locales de aprendizaje, conserva el avance exacto de cada clase y reúne
+      videos, subtítulos, documentos y notas en una experiencia de escritorio centrada en privacidad y continuidad.
+    </p>
+    <p>
+      El proyecto está orientado a uso local-first, con respaldos, búsqueda, marcadores y ayudas opcionales para
+      enriquecer la biblioteca sin depender de un servicio cloud como requisito base.
+    </p>
+  </description>
+  <launchable type="desktop-id">OrganiCursos.desktop</launchable>
+  <categories>
+    <category>Education</category>
+    <category>AudioVideo</category>
+    <category>Utility</category>
+  </categories>
+  <releases>
+    <release version="0.1.0" date="2026-05-22" />
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>
